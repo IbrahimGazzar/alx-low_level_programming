@@ -9,8 +9,10 @@
  */
 int main(void)
 {
-	for (char c = 'a'; c > 'A'; c++)
+	char c;
+	
+	for (c = 'a'; c > 'A'; c++)
 		putchar(c);
-	putchar("\n");
+	putchar('\n');
 	return (0);
 }
