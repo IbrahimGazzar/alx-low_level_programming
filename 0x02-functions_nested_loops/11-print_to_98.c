@@ -34,7 +34,7 @@ void print_to_98(int n)
 				_putchar('-');
 			if (n_100 > 0)
 				_putchar(n_100 + 48);
-			if (n_010 > 0)
+			if (n_010 > 0 || n_100 > 0)
 				_putchar(n_010 + 48);
 			_putchar(n_001 + 48);
 			_putchar(',');
