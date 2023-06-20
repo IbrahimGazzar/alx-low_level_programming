@@ -12,7 +12,11 @@ int main(void)
 	putputchar();
 	return (0);
 }
-
+/**
+ * putputchar - print "_putchar"
+ *
+ * Return: no return value
+ */
 void putputchar(void)
 {
 	putchar('_');
