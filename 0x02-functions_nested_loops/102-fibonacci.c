@@ -21,7 +21,9 @@ int main(void)
 		temp = fib1;
 		fib1 = fib2;
 		fib2 = temp + fib1;
-		printf("%ld, ", fib2);
+		printf("%ld", fib2);
+		if (i < 49)
+			printf(", ");
 	}
 	putchar('\n');
 	return (0);
