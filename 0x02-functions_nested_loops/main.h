@@ -1,3 +1,6 @@
+#ifndef MAIN_H
+#define MAIN_H
+
 void putputchar(void)
 {
 	putchar('_');
@@ -11,15 +14,6 @@ void putputchar(void)
 	putchar('\n');
 }
 
-void print_alphabet(void)
-{
-	char c;
-
-	for (c = 'a'; c <= 'z'; c++)
-		_putchar(c);
-	_putchar('\n');
-}
-
 #include <unistd.h>
 
 /**
@@ -31,5 +25,10 @@ void print_alphabet(void)
  */
 int _putchar(char c)
 {
-	return (write(1, &c, 1));
+    return (write(1, &c, 1));
 }
+
+/* Function prototypes */
+void print_alphabet(void);
+
+#endif 
