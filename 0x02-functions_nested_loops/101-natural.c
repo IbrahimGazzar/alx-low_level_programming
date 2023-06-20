@@ -1,5 +1,5 @@
 #include <stdio.h>
-11;rgb:0000/0000/0000#include <stdlib.h>
+#include <stdlib.h>
 
 /**
  * main - a function that computes the sum of multiples of 3 and 5 below 1024
