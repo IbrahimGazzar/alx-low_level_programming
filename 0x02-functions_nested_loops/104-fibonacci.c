@@ -14,8 +14,8 @@ int main(void)
 	long int temp;
 	int i;
 
-	fib1 = 1;
-	fib2 = 2;
+	fib1 = 0;
+	fib2 = 1;
 	for (i = 0; i < 98; i++)
 	{
 		temp = fib1;
