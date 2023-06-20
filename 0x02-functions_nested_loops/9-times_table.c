@@ -29,7 +29,8 @@ void times_table(void)
 			else
 				_putchar(' ');
 			_putchar(result_01 + 48);
-			_putchar(',');
+			if (num2 < 9)
+				_putchar(',');
 		}
 		_putchar('\n');
 	}
