@@ -3,7 +3,7 @@
 #include "main.h"
 
 /**
- * print_alphabet - print the alphabet in lowercase, 10 times
+ * print_alphabet_x10 - print the alphabet in lowercase, 10 times
  *
  * Return: return no value
  */
