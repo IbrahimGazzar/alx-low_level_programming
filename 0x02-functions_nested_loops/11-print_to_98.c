@@ -36,7 +36,7 @@ void print_to_98(int n)
 				_putchar(n_100 + 48);
 			if (n_010 > 0)
 				_putchar(n_010 + 48);
-			_putchar(n_001);
+			_putchar(n_001 + 48);
 			_putchar(',');
 			_putchar(' ');
 
@@ -70,9 +70,9 @@ void above_98(int n)
 			_putchar(n_100 + 48);
 		if (n_010 > 0)
 			_putchar(n_010 + 48);
-		_putchar(n_001);
+		_putchar(n_001 + 48);
 		_putchar(',');
 		_putchar(' ');
 	}
 }
-	
+
