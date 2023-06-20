@@ -1,5 +1,6 @@
 #include <stdio.h>
 
+void putputchar(void);
 /**
  * main - print "_putchar"
  *
