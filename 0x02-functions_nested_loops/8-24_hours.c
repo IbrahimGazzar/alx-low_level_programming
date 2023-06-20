@@ -18,17 +18,17 @@ void jack_bauer(void)
 	for (hour = 0; hour < 24; hour++)
 	{
 		hour_01 = hour % 10;
-		hour_10 = hour - hour_01;	
+		hour_10 = hour - hour_01;
 		minute = 0;
 		for (minute = 0; minute < 60; minute++)
 		{
 			minute_01 = minute % 10;
 			minute_10 = minute - minute_01;
-			_putchar(hour_10);
-			_putchar(hour_01);
+			_putchar(hour_10 + 44);
+			_putchar(hour_01 + 44);
 			_putchar(':');
-			_putchar(minute_10);
-			_putchar(minute_01);
+			_putchar(minute_10 + 44);
+			_putchar(minute_01 + 44);
 			_putchar('\n');
 		}
 	}
