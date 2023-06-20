@@ -21,7 +21,7 @@ int main(void)
 		temp = fib1;
 		fib1 = fib2;
 		fib2 = temp + fib1;
-		printf("%l, ", fib2);
+		printf("%ld, ", fib2);
 	}
 	putchar('\n');
 	return (0);
