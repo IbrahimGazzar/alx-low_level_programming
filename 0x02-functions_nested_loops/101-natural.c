@@ -14,10 +14,13 @@ int main(void)
 	int i5;
 
 	sum = 0;
-	for (i3 = 3; i3 < 1024; i3 += 3)
+	for (i3 = 3; i3 < 1024; i3+3)
 		sum += i3;
-	for (i5 = 5; i5 < 1024; i5 += 5)
-		sum += i5;
+	for (i5 = 5; i5 < 1024; i5+5)
+	{
+		if (i5 % 3 != 0)
+			sum += i5;
+	}
 	printf("%d\n", sum);
 	return (0);
 }
