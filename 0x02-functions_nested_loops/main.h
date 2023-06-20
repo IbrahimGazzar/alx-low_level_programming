@@ -1,18 +1,7 @@
 #ifndef MAIN_H
 #define MAIN_H
 
-void putputchar(void)
-{
-	putchar('_');
-	putchar('p');
-	putchar('u');
-	putchar('t');
-	putchar('c');
-	putchar('h');
-	putchar('a');
-	putchar('r');
-	putchar('\n');
-}
+void putputchar(void);
 
 #include <unistd.h>
 
