@@ -10,15 +10,11 @@
 void print_to_98(int n)
 {
 	int i;
-	int n_abs;
+	int i_abs;
 	int n_100;
 	int n_010;
 	int n_001;
 
-	if (n < 0)
-		n_abs = 0 - n;
-	else
-		n_abs = n;
 	if (n > 98)
 	{
 		above_98(n);
@@ -27,9 +23,13 @@ void print_to_98(int n)
 	{
 		for (i = n; i < 98; i++)
 		{
-			n_001 = n_abs % 10;
-			n_010 = ((n_abs % 100) - n_001) / 10;
-			n_100 = (n_abs - (n_abs % 100)) / 100;
+			if (i < 0)
+				i_abs = 0 - i;
+			else
+				i_abs = i;
+			n_001 = i_abs % 10;
+			n_010 = ((i_abs % 100) - n_001) / 10;
+			n_100 = (i_abs - (i_abs % 100)) / 100;
 			if (i < 0)
 				_putchar('-');
 			if (n_100 > 0)
@@ -63,9 +63,9 @@ void above_98(int n)
 
 	for (i = n; i > 98; i--)
 	{
-		n_001 = n % 10;
-		n_010 = ((n % 100) - n_001) / 10;
-		n_100 = (n - (n % 100)) / 100;
+		n_001 = i % 10;
+		n_010 = ((i % 100) - n_001) / 10;
+		n_100 = (i - (i % 100)) / 100;
 		if (n_100 > 0)
 			_putchar(n_100 + 48);
 		if (n_010 > 0)
