@@ -23,11 +23,8 @@ void print_times_table(int n)
 		_putchar('0');
 		for (num2 = 1; num2 <= n; num2++)
 		{
-			if (num2 < n)
-			{
-				_putchar(',');
-				_putchar(' ');
-			}
+	       		_putchar(',');
+       			_putchar(' ');
 			result = num1 * num2;
 			result_001 = result % 10;
 			result_010 = ((result % 100) - result_001) / 10;
