@@ -9,9 +9,9 @@
 
 int main(void)
 {
-	int fib1;
-	int fib2;
-	int temp;
+	long int fib1;
+	long int fib2;
+	long int temp;
 	int i;
 
 	fib1 = 0;
