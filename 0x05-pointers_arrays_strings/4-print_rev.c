@@ -11,10 +11,9 @@ void print_rev(char *s)
 {
 	int i;
 
-	for (i = sizeof(*s); i >= 0; i--)
-	{
-		if (s[i] != '\0')
-			_putchar(s[i]);
-	}
+	for (i = 0; s[i] != '\0'; i++)
+		continue;
+	for (--i; i >= 0; i--)
+		_putchar(s[i]);
 	_putchar('\n');
 }
