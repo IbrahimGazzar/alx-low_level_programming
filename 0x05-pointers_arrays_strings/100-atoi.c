@@ -24,6 +24,8 @@ int _atoi(char *s)
 				sign = -1;
 			num = (num * 10) + sign * (s[i] - 48);
 		}
+		if (num > 0 && (s[i] < '0' || s[i] > '9'))
+			break;
 	}
 	return (num);
 }
