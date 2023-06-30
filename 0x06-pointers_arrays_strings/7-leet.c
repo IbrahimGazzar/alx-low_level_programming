@@ -16,7 +16,7 @@ char *leet(char *str)
 	while (*str != '\0')
 	{
 		ch = *str;
-		ch += '4' * (ch == 'a' || ch == 'A');
+		ch = '4' * (ch == 'a' || ch == 'A');
 		ch += '3' * (ch == 'e' || ch == 'E');
 		ch += '0' * (ch == 'o' || ch == 'O');
 		ch += '7' * (ch == 't' || ch == 'T');
