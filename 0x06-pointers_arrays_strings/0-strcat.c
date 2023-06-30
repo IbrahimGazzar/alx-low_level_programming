@@ -11,16 +11,21 @@
 char *_strcat(char *dest, char *src)
 {
 	int i;
-	int destlen;
+	int k;
+	int len;
 	char *newstr;
 
-	destlen = 0;
+	len = 0;
 	for (i = 0; dest[i] != '\0'; i++)
-	{
-		newstr[i] = dest[i];
-		destlen = i + 1;
-	}
+		len++;
 	for (i = 0; src[i] != '\0'; i++)
-		newstr[i + destlen] = src[i];
+		len++;
+	len++;
+	k = 0;
+	*newstr = (char*)malloc(len * sizeof(char));
+	for (i = 0; dest[i] != '\0'; i++, k++)
+		newstr[k] = dest[i];
+	for (i = 0; src[i] != '\0'; i++, k++)
+		newstr[k] = src[i];
 	return (newstr);
 }
