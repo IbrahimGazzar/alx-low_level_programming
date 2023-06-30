@@ -16,7 +16,9 @@ char *cap_string(char *str)
 	newstr = str;
 	for (i = 0; str[i] != '\0'; i++)
 	{
-		if(str[i] >= 'a' && str[i] <= 'z' && i > 0)
+		if (str[i] >= 'a' && str[i] <= 'z' && i == 0)
+			str[i] -= 32;
+		if (str[i] >= 'a' && str[i] <= 'z' && i > 0)
 		{
 			ip = i - 1;
 			if (str[ip] == ' ' || str[ip] == '\t' || str[ip] == '\n' || str[ip] == ',')
