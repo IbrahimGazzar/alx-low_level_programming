@@ -17,5 +17,5 @@ int _strcmp(char *s1, char *s2)
 		s1++;
 		s2++;
 	}
-	return ((*s1 < *s2) ? -1 : 1);
+	return ((*s1 < *s2) ? -15 : 15);
 }
