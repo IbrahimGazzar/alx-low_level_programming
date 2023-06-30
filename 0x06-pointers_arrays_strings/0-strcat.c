@@ -1,5 +1,6 @@
 #include "main.h"
 #include <stdio.h>
+#include <stdlib.h>
 
 /**
  * _strcat - concatenates two strings
@@ -23,7 +24,7 @@ char *_strcat(char *dest, char *src)
 		len++;
 	len++;
 	k = 0;
-	*newstr = (char*)malloc(len * sizeof(char));
+	newstr = (char*)malloc(len * sizeof(char));
 	for (i = 0; dest[i] != '\0'; i++, k++)
 		newstr[k] = dest[i];
 	for (i = 0; src[i] != '\0'; i++, k++)
