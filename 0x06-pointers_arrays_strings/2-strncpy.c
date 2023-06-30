@@ -20,10 +20,10 @@ char *_strncpy(char *dest, char *src, int n)
 	{
 		*dest = *src;
 		dest++;
-		src++;
-		cnt++;
 		if (*src == '\0')
 			break;
+		src++;
+		cnt++;
 	}
 	return (newstr);
 }
