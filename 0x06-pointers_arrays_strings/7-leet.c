@@ -10,20 +10,19 @@
 char *leet(char *str)
 {
 	char *newstr;
+	char ch;
 
 	newstr = str;
 	while (*str != '\0')
 	{
-		if (*str == 'a' || *str == 'A')
-			*str = '4';
-		else if (*str == 'e' || *str == 'E')
-			*str = '3';
-		else if (*str == 'o' || *str == 'O')
-			*str = '0';
-		else if (*str == 't' || *str == 'T')
-			*str = '7';
-		else if (*str == 'l' || *str == 'L')
-			*str = '1';
+		ch = *ptr;
+		ch += '4' * (ch == 'a' || ch == 'A');
+		ch += '3' * (ch == 'e' || ch == 'E');
+		ch += '0' * (ch == 'o' || ch == 'O');
+		ch += '7' * (ch == 't' || ch == 'T');
+		ch += '1' * (ch == 'l' || ch == 'L');
+		if (ch != 0)
+			*str = ch;
 		str++;
 	}
 	return (newstr);
