@@ -15,7 +15,7 @@ char *leet(char *str)
 	newstr = str;
 	while (*str != '\0')
 	{
-		ch = *ptr;
+		ch = *str;
 		ch += '4' * (ch == 'a' || ch == 'A');
 		ch += '3' * (ch == 'e' || ch == 'E');
 		ch += '0' * (ch == 'o' || ch == 'O');
