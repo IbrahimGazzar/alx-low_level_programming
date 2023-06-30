@@ -16,11 +16,11 @@ char *leet(char *str)
 	while (*str != '\0')
 	{
 		ch = *str;
-		ch = '4' * (ch == 'a' || ch == 'A');
-		ch += '3' * (ch == 'e' || ch == 'E');
-		ch += '0' * (ch == 'o' || ch == 'O');
-		ch += '7' * (ch == 't' || ch == 'T');
-		ch += '1' * (ch == 'l' || ch == 'L');
+		ch = '4' * (ch == 'a' || ch == 'A') +
+		'3' * (ch == 'e' || ch == 'E') +
+		'0' * (ch == 'o' || ch == 'O') +
+		'7' * (ch == 't' || ch == 'T') +
+		'1' * (ch == 'l' || ch == 'L');
 		if (ch != 0)
 			*str = ch;
 		str++;
