@@ -16,10 +16,10 @@ char *_strstr(char *haystack, char *needle)
 
 	while (*haystack != '\0')
 	{
+		hay = haystack;
 		nee = needle;
 		if (*haystack == *nee)
 		{
-			hay = haystack;
 			while (*nee != '\0')
 			{
 				if (*hay != *nee)
