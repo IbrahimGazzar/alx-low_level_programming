@@ -20,10 +20,15 @@ unsigned int _strspn(char *s, char *accept)
 		while (*ss != '\0')
 		{
 			if (*ss == *accept)
+			{
 				occ++;
+				break;
+			}
 			ss++;
 		}
 		accept++;
 	}
+	if (*ss == *accept)
+		occ++;
 	return (occ);
 }
