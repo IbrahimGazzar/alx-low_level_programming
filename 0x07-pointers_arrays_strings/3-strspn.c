@@ -29,7 +29,7 @@ unsigned int _strspn(char *s, char *accept)
 		if (!match)
 			return (occ);
 		occ++;
-		s++;		
-	} 
+		s++;
+	}
 	return (occ);
 }
