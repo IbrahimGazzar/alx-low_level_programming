@@ -12,23 +12,29 @@ unsigned int _strspn(char *s, char *accept)
 {
 	char *ss;
 	int occ;
+	int temp;
 
 	occ = 0;
-	while (*accept != '\0')
+	temp = 0;
+	while (*ss != '\0')
 	{
-		ss = s;
-		while (*ss != '\0')
+		temp1 = temp;
+		while (*accept != '\0')
 		{
 			if (*ss == *accept)
 			{
-				occ++;
+				temp++;
 				break;
 			}
-			ss++;
+			accept++;
 		}
-		accept++;
+		if (temp1 == temp)
+		{
+			if (temp > occ)
+				occ = temp;
+			temp = 0;
+		}
+		
 	}
-	if (*ss == *accept)
-		occ++;
 	return (occ);
 }
