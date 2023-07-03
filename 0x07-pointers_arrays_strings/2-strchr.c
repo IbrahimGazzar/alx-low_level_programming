@@ -2,7 +2,7 @@
 #include <stddef.h>
 
 /**
- * strchr - finds the first occurence of a character in a given string
+ * _strchr - finds the first occurence of a character in a given string
  * @s: string to be searched into
  * @c: character to be looked for
  *
@@ -20,6 +20,7 @@ char *_strchr(char *s, char c)
 		{
 			news = s;
 			break;
+			s++;
 		}
 		s++;
 	}
