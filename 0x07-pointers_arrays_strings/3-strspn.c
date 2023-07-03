@@ -10,33 +10,27 @@
 
 unsigned int _strspn(char *s, char *accept)
 {
-	char *ss;
 	int occ;
-	int temp;
-	int temp1;
+	int match;
+	char *ptr;
 
-	ss = s;
+	ptr = accept;
 	occ = 0;
-	temp = 0;
-	while (*ss != '\0')
+	while (*s != '\0')
 	{
-		temp1 = temp;
-		while (*accept != '\0')
+		match = 0;
+		for (ptr; *ptr != '\0'; ptr++)
 		{
-			if (*ss == *accept)
+			if (*s == *ptr)
 			{
-				temp++;
+				match = 1;
 				break;
 			}
-			accept++;
 		}
-		if (temp1 == temp)
-		{
-			if (temp > occ)
-				occ = temp;
-			temp = 0;
-		}
-		
-	}
+		if (!match)
+			return (occ);
+		occ++;
+		s++;		
+	} 
 	return (occ);
 }
