@@ -19,8 +19,8 @@ char *_strchr(char *s, char c)
 		if (*s == c)
 		{
 			news = s;
-			break;
 			s++;
+			break;
 		}
 		s++;
 	}
