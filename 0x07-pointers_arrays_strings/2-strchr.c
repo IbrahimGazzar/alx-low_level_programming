@@ -11,18 +11,11 @@
 
 char *_strchr(char *s, char c)
 {
-	char *news;
-
-	news = NULL;
 	while (*s != '\0')
 	{
 		if (*s == c)
-		{
-			news = s;
-			s++;
-			break;
-		}
+			return (s);
 		s++;
 	}
-	return (news);
+	return (NULL);
 }
