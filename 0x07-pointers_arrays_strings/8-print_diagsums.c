@@ -19,8 +19,8 @@ void print_diagsums(int *a, int size)
 	rightdiag = 0;
 	for (i = 0; i < size; i++)
 	{
-		leftdiag += a[i][i];
-		rightdiag += a[i][size - 1 - i];
+		leftdiag += a[i + (size * i)];
+		rightdiag += a[size - 1 - i + (size * i)];
 	}
 	printf("%d, %d\n", leftdiag, rightdiag);
 }
