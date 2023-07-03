@@ -13,6 +13,7 @@ unsigned int _strspn(char *s, char *accept)
 	char *ss;
 	int occ;
 	int temp;
+	int temp1;
 
 	occ = 0;
 	temp = 0;
