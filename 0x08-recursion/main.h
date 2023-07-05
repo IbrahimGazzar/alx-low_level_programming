@@ -12,5 +12,6 @@ int sqrt_calc(int n, int div);
 int is_prime_number(int n);
 int prime_helper(int n, int inc);
 int is_palindrome(char *s);
+int palin_help(char *s_1, char *s_2);
 
 #endif
