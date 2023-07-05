@@ -15,7 +15,6 @@ int _sqrt_recursion(int n)
 		return (n);
 	return (sqrt_calc(n, 2));
 }
-/*
 /**
  * sqrt_calc - checks various numbers to be a square root or not
  * @n: base number
