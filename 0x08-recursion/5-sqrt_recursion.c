@@ -1,5 +1,7 @@
 #include "main.h"
 
+int sqrt_calc(int n, int div);
+
 /**
  * _sqrt_recursion - calculate the square root of a given number
  * @n: base number
