@@ -15,7 +15,7 @@ int is_palindrome(char *s)
 		return (0);
 	smirror = s;
 	smirror = point_mov(smirror);
-	return(palin_help(s, smirror));
+	return (palin_help(s, smirror));
 }
 /**
  * palin_help - checks the individual characters of the string
@@ -42,7 +42,7 @@ int palin_help(char *s_1, char *s_2)
 
 char *point_mov(char *smirror)
 {
-	if(*smirror == '\0')
+	if (*smirror == '\0')
 		return (--smirror);
 	return (point_mov(++smirror));
 }
