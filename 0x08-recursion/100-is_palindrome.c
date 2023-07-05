@@ -11,9 +11,10 @@ int is_palindrome(char *s)
 {
 	char *smirror;
 
+	if (*s == '\0')
+		return (0);
 	smirror = s;
-	while (*smirror != '\0')
-		smirror++;
+	smirror = point_mov(smirror);
 	return(palin_help(s, --smirror));
 }
 /**
@@ -31,4 +32,17 @@ int palin_help(char *s_1, char *s_2)
 	if (*s_1 != *s_2)
 		return (0);
 	return (palin_help(++s_1, --s_2));
+}
+/**
+ * point_mov - moves a pointer to the end of the string
+ * @smirror: pointer to be moved
+ *
+ * Return: The updated pointer
+ */
+
+char *point_mov(char *smirror)
+{
+	if(*smirror == '\0')
+		return (--smirror);
+	return (point_mov(++smirror));
 }
