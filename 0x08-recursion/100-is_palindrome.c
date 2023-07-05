@@ -14,7 +14,7 @@ int is_palindrome(char *s)
 	smirror = s;
 	while (*smirror != '\0')
 		smirror++;
-	palin_help(s, --smirror);
+	return(palin_help(s, --smirror));
 }
 /**
  * palin_help - checks the individual characters of the string
