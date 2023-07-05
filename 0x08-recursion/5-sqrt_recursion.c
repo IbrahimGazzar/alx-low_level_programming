@@ -16,6 +16,7 @@ int _sqrt_recursion(int n)
 	return (sqrt_calc(n, 2));
 }
 /*
+/**
  * sqrt_calc - checks various numbers to be a square root or not
  * @n: base number
  * @div: number to have n divided by and tested
