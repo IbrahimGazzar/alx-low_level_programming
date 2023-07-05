@@ -14,5 +14,6 @@ int prime_helper(int n, int inc);
 int is_palindrome(char *s);
 int palin_help(char *s_1, char *s_2);
 char *point_mov(char *smirror);
+int wildcmp(char *s1, char *s2);
 
 #endif
