@@ -17,9 +17,7 @@ char *create_array(unsigned int size, char c)
 
 	if (size < 1)
 		return (NULL);
-	if (size > 4168 / 4)
-		size = 4168 / 4;
-	arr = malloc(sizeof(unsigned int) * size);
+	arr = malloc(sizeof(char) * size);
 	i = 0;
 	while (1)
 	{
