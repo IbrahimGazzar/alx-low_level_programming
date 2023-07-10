@@ -23,15 +23,21 @@ char *str_concat(char *s1, char *s2)
 	k = 0;
 	if (newstr == NULL)
 		return (NULL);
-	for (i = 0; i <= (int)strlen(s1); i++)
+	if (s1 != NULL)
 	{
-		newstr[k] = s1[i];
-		k++;
+		for (i = 0; i <= (int)strlen(s1); i++)
+		{
+			newstr[k] = s1[i];
+			k++;
+		}
 	}
-	for (i = 0; i <= (int)strlen(s2); i++)
+	if (s2 != NULL)
 	{
-		newstr[k] = s2[i];
-		k++;
+		for (i = 0; i <= (int)strlen(s2); i++)
+		{
+			newstr[k] = s2[i];
+			k++;
+		}
 	}
 	newstr[++k] = '\0';
 	return (newstr);
