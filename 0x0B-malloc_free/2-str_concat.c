@@ -22,9 +22,9 @@ char *str_concat(char *s1, char *s2)
 	newstr = malloc(sizeof(char) * (length + 1));
 	if (newstr == NULL)
 		return (NULL);
-	for (i = 0; i < strlen(s1); i++)
+	for (i = 0; i < (int)strlen(s1); i++)
 		newstr[i] = s1[i];
-	for (i = strlen(s1); i < length; i++)
+	for (i = strlen(s1); i < (int)length; i++)
 		newstr[i] = s2[i - strlen(s1)];
 	newstr[length] = '\0';
 	return (newstr);
