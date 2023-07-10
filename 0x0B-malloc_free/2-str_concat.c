@@ -14,31 +14,20 @@ char *str_concat(char *s1, char *s2)
 {
 	char *newstr;
 	int i;
-	int k;
+	int length;
 
 	if (s1 == NULL && s2 == NULL)
 		return (NULL);
-	newstr = malloc(sizeof(char) * (strlen(s1) + strlen(s2) + 1));
+	length = strlen(s1) + strlen(s2);
+	newstr = malloc(sizeof(char) * (length + 1));
 	i = 0;
 	k = 0;
 	if (newstr == NULL)
 		return (NULL);
-	if (s1 != NULL)
-	{
-		for (i = 0; i <= (int)strlen(s1); i++)
-		{
-			newstr[k] = s1[i];
-			k++;
-		}
-	}
-	if (s2 != NULL)
-	{
-		for (i = 0; i <= (int)strlen(s2); i++)
-		{
-			newstr[k] = s2[i];
-			k++;
-		}
-	}
-	newstr[++k] = '\0';
+	for (i = 0; i < strlen(s1); i++)
+		newstr[i] = s1[i];
+	for (i = strlen(s1); i < length; i++)
+		newstr[i] = s2[i - strlen(s1)];
+	newstr[length] = '\0';
 	return (newstr);
 }
