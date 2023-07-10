@@ -9,15 +9,22 @@
  * Return: the array created
  */
 
+
 char *create_array(unsigned int size, char c)
 {
 	char *arr;
 	unsigned int i;
 
-	if (size < 1)
-		return (NULL);
 	arr = malloc(sizeof(int) * size);
-	for (i = 0; i < size; i++)
+	i = 0;
+	while (1)
+	{
+		if (arr == NULL)
+			return (NULL);
+		if (i >= size)
+			return (arr);
 		arr[i] = c;
+		i++;
+	}
 	return (arr);
 }
