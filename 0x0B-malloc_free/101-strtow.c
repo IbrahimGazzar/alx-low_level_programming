@@ -15,17 +15,14 @@ char **strtow(char *str)
 	char **starr;
 	int i;
 	int count;
-	char *strr;
 	int is_word;
-	int *wordlen;
 
 	if (str == NULL || strcmp(str, "") == 0)
 		return (NULL);
 	count = 0;
-	strr = str;
 	is_word = 0;
 	count = word_counter(str);
-	starr = word_length(wordlen, str, starr, count);
+	starr = word_length(str, count);
 	if (starr == NULL)
 		return (NULL);
 	while (isspace(*str) != 0)
@@ -85,15 +82,15 @@ int word_counter(char *str)
 }
 /**
  * word_length - calculates the length of words
- * @wordlen: array containing length of words
  * @str: string containing the words
- * @starr: array containing strings
  * @count: number of letters in sentence
  *
  * Return: the updated starr array
  */
-char **word_length(int *wordlen, char *str, char **starr, int count)
+char **word_length(char *str, int count)
 {
+	char **starr;
+	int *wordlen;
 	char *strr;
 	int i;
 	int j;
