@@ -47,8 +47,8 @@ char **strtow(char *str)
 		{
 			*starr[i] = *str;
 		}
-		*starr[i]++;
-		*str++;
+		starr[i]++;
+		str++;
 	}
 	*starr[i] = '\0';
 	return (starr);
