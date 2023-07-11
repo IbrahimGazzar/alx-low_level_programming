@@ -19,7 +19,7 @@ char **strtow(char *str)
 	int is_word;
 	int *wordlen;
 
-	if (str == NULL || str == "")
+	if (str == NULL || strcmp(str, "") == 0)
 		return (NULL);
 	count = 0;
 	strr = str;
