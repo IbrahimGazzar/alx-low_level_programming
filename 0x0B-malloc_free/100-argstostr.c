@@ -14,24 +14,25 @@ char *argstostr(int ac, char **av)
 {
 	int i;
 	char *newstr;
+	int length;
+	int pos;
 
 	if (ac == 0 || av == NULL)
 		return (NULL);
-	newstr = av[1];
-	for (i = 1; i < ac; i++)
+	length = 0;
+	for (i = 0; i < ac; i++)
+		length += strlen(av[i]) + 1;
+	newstr = malloc(sizeof(char) * (length + 1));
+	if (newstr == NULL)
+		return (NULL);
+	pos = 0;
+	for (i = 0; i < ac; i++)
 	{
-		if (i > 1)
-		{
-			*newstr = '\n';
-			newstr++;
-		}
-		while (*av[i] != '\0')
-		{
-			*newstr = *av[i];
-			newstr++;
-			av[i]++;
-		}
+		strcpy(newstr + pos, av[i]);
+		pos += strlen(av[i]);
+		newstr[pos] = '\n';
+		pos++;
 	}
-	*newstr = '\0';
+	newstr[pos] = '\0';
 	return (newstr);
 }
