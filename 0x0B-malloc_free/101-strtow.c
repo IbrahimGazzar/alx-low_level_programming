@@ -37,19 +37,19 @@ char **strtow(char *str)
 			if (is_word)
 			{
 				is_word = 0;
-				*starr[i] = '\0';
+				*(starr[i]) = '\0';
 				i++;
 			}
 		}
-		else if (!is_word)
+		else if (is_word == 0)
 		{
 			is_word = 1;
-			*starr[i] = *str;
+			*(starr[i]) = *str;
 		}
-		starr[i]++;
+		(starr[i])++;
 		str++;
 	}
-	*starr[i] = '\0';
+	*(starr[i]) = '\0';
 	return (starr);
 }
 /**
@@ -111,10 +111,9 @@ char **word_length(char *str, int count)
 		{
 			if (wordlen[i] > 0)
 			{
-				starr[i] = malloc(sizeof(char) * wordlen[i]);
+				starr[i] = malloc(sizeof(char) * (wordlen[i] + 1));
 				if (starr[i] == NULL)
 				{
-					j = 0;
 					for (j = 0; j <= i; j++)
 						free(starr[j]);
 					free(starr);
