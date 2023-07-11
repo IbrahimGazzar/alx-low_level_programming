@@ -103,6 +103,11 @@ char **word_length(char *str, int count)
 	if (starr == NULL)
 		return (NULL);
 	wordlen = malloc(sizeof(int) * count);
+	if (wordlen == NULL)
+	{
+		free(starr);
+		return (NULL);
+	}
 	for (i = 0; i < count; i++)
 		wordlen[i] = 0;
 	while (*strr != '\0')
