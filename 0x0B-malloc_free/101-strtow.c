@@ -19,9 +19,10 @@ char **strtow(char *str)
 
 	if (str == NULL || strcmp(str, "") == 0)
 		return (NULL);
-	count = 0;
 	is_word = 0;
 	count = word_counter(str);
+	if (count < 1)
+		return (NULL);
 	starr = word_length(str, count);
 	if (starr == NULL)
 		return (NULL);
@@ -40,8 +41,9 @@ char **strtow(char *str)
 				i++;
 			}
 		}
-		else
+		else if (!is_word)
 		{
+			is_word = 1;
 			*starr[i] = *str;
 		}
 		starr[i]++;
