@@ -19,7 +19,7 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 	arrptr = malloc(size * nmemb);
 	if (arrptr == NULL)
 		return (NULL);
-	for (i = 0; i < nmemb * size; i++)
+	for (i = 0; i < (nmemb * size); i++)
 		((int *)arrptr)[i] = 0;
 	return (arrptr);
 }
