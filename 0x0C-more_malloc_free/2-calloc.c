@@ -20,6 +20,6 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 	if (arrptr == NULL)
 		return (NULL);
 	for (i = 0; i < nmemb; i++)
-		arrptr[nmemb] = 0;
+		arrptr[i] = 0;
 	return (arrptr);
 }
