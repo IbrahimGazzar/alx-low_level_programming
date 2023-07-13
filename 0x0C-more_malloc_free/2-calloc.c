@@ -13,13 +13,18 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 {
 	void *arrptr;
 	unsigned int i;
+	void *mvr;
 
 	if (nmemb == 0 || size == 0)
 		return (NULL);
 	arrptr = malloc(size * nmemb);
 	if (arrptr == NULL)
 		return (NULL);
+	mvr = arrptr;
 	for (i = 0; i < (nmemb * size); i++)
-		((int *)arrptr)[i] = 0;
+	{
+		*((int *)mvr) = 0;
+		mvr++;
+	}
 	return (arrptr);
 }
