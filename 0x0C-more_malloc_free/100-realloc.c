@@ -1,5 +1,6 @@
 #include <stdlib.h>
 #include "main.h"
+#include <string.h>
 
 /**
  * _realloc - reallocates the memory pointed to by a pointer
@@ -22,7 +23,7 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 	if (new_size == old_size)
 		return (ptr);
 	newptr = malloc(new_size);
-	if (new_ptr == NULL)
+	if (newptr == NULL)
 		return (NULL);
 	if (ptr == NULL && new_size > 0)
 		return (newptr);
