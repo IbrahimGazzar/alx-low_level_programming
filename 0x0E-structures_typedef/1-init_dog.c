@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include "dog.h"
 #include <stdlib.h>
-#include <string.h>
 
 /**
  * init_dog - intializes a variable of type dog
@@ -14,9 +13,15 @@
  */
 void init_dog(struct dog *d, char *name, float age, char *owner)
 {
-	d->name = malloc((strlen(name) + 1) * sizeof(char));
-	strcpy(d->name, name);
+	if (d == NULL)
+		return;
+	if (name == "" || name == NULL)
+		return;
+	d->name = name;
+	if (age < 0)
+		return;
 	d->age = age;
-	d->owner = malloc((strlen(owner) + 1) * sizeof(char));
-	strcpy(d->owner, owner);
+	if (owner == "" || owner == NULL)
+		return;
+	d->owner = owner;
 }
