@@ -25,7 +25,7 @@ void print_strings(const char *separator, const unsigned int n, ...)
 	va_start(argues, n);
 	for (i = 0; i < n; i++)
 	{
-		ss = va_arg(argues, int);
+		ss = va_arg(argues, char*);
 		if (ss != NULL)
 			printf("%s", ss);
 		else
