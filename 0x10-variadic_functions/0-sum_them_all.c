@@ -19,9 +19,9 @@ int sum_them_all(const unsigned int n, ...)
 	sum = 0;
 	if (n > 0)
 	{
-		va_start (argues, n);
+		va_start(argues, n);
 		for (i = 0; i < n; i++)
-			sum += va_arg (argues, int);
+			sum += va_arg(argues, int);
 	}
 	return (sum);
 }
