@@ -18,13 +18,11 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 
 	if (n < 1)
 		return;
-	if (separator == NULL)
-		separator = "";
 	va_start(argues, n);
 	for (i = 0; i < n; i++)
 	{
 		printf("%d", va_arg(argues, int));
-		if (i < n - 1)
+		if (i < n - 1 && separator != NULL)
 			printf("%s", separator);
 	}
 	printf("\n");
