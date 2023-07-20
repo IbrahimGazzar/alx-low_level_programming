@@ -6,7 +6,7 @@
  * sum_them_all - sums up all its parameters
  * @n: number of parameters
  * @...: parameters to be summed
- * 
+ *
  * Return: sum of the given parameters
  */
 
