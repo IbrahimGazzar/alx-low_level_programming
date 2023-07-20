@@ -82,9 +82,17 @@ char *clean_format(const char * const format)
 	clean = malloc(sizeof(char) * (strlen(format) + 1));
 	while (format[i] != '\0')
 	{
-		if (format[i] == 'c' || format[i] == 'i' || format[i] == 'f' ||
-		format[i] == 's')
-			clean[j++] = format[i];
+		switch (format[i])
+		{
+			case 'c':
+			case 'i':
+			case 'f':
+			case 's':
+				clean[j++] = format[i];
+				break;
+			default:
+				break;
+		}
 		i++;
 	}
 	clean[j] = '\0';
