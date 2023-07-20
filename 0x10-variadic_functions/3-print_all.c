@@ -48,7 +48,7 @@ void print_all(const char * const format, ...)
 		i++;
 	}
 	va_end(argues);
-	putchar('\n');
+	printf("\n");
 }
 /**
  * print_help - helps by formatting the text to be printed
