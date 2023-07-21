@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <stdlib.h>
+11;rgb:0000/0000/0000#include <stdlib.h>
 #include <stdarg.h>
 #include <string.h>
 #include "variadic_functions.h"
@@ -22,7 +22,7 @@ void print_all(const char * const format, ...)
 	clean = clean_format(format);
 	i = 0;
 	va_start(argues, format);
-	while (clean[i] != '\0')
+	while (clean && clean[i] != '\0')
 	{
 		switch (clean[i])
 		{
@@ -62,7 +62,7 @@ char *print_help(const char * const format, int i)
 	char *help;
 
 	help = "";
-	if (format[i+1] != '\0')
+	if (format[i + 1] != '\0')
 		help = ", ";
 	return (help);
 }
