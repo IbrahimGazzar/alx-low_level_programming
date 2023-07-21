@@ -27,7 +27,7 @@ void print_all(const char * const format, ...)
 		switch (clean[i])
 		{
 			case 'c':
-				printf("%c%s", va_arg(argues, int), print_help(clean, i));
+				printf("%c%s", (char)va_arg(argues, int), print_help(clean, i));
 				break;
 			case 'i':
 				printf("%d%s", va_arg(argues, int), print_help(clean, i));
@@ -62,7 +62,7 @@ char *print_help(const char * const format, int i)
 	char *help;
 
 	help = "";
-	if ((size_t)i < strlen(format) - 1)
+	if (format[i+1] != '\0')
 		help = ", ";
 	return (help);
 }
