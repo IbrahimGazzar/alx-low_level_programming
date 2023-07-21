@@ -44,27 +44,12 @@ void print_all(const char * const format, ...)
 				}
 				printf("%s", ss);
 		}
-		printf("%s", print_help(clean, i));
+		if (clean[i + 1] != '\0')
+			printf(", ");
 		i++;
 	}
 	va_end(argues);
 	printf("\n");
-}
-/**
- * print_help - helps by formatting the text to be printed
- * @format: format string
- * @i: current position in the string
- *
- * Return: ", " if i isn't the last element, empty string otherwise
- */
-char *print_help(const char * const format, int i)
-{
-	char *help;
-
-	help = "";
-	if (format[i + 1] != '\0')
-		help = ", ";
-	return (help);
 }
 /**
  * clean_format - clean a given format from unused characters
