@@ -27,24 +27,24 @@ void print_all(const char * const format, ...)
 		switch (clean[i])
 		{
 			case 'c':
-				printf("%c%s", (char)va_arg(argues, int), print_help(clean, i));
+				printf("%c", va_arg(argues, int));
 				break;
 			case 'i':
-				printf("%d%s", va_arg(argues, int), print_help(clean, i));
+				printf("%d", va_arg(argues, int));
 				break;
 			case 'f':
-				printf("%f%s", (float)va_arg(argues, double), print_help(clean, i));
+				printf("%f", va_arg(argues, double));
 				break;
 			case 's':
 				ss = va_arg(argues, char*);
 				if (ss == NULL)
 				{
-					printf("(nil)%s", print_help(clean, i));
+					printf("(nil)");
 					break;
 				}
-				printf("%s%s", ss, print_help(clean, i));
-				break;
+				printf("%s", ss);
 		}
+		printf("%s", print_help(clean, i));
 		i++;
 	}
 	va_end(argues);
