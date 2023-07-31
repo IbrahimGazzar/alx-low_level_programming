@@ -1,5 +1,5 @@
 #include <stdlib.h>
-11;rgb:0000/0000/0000#include <string.h>
+#include <string.h>
 #include <stdio.h>
 #include "lists.h"
 
