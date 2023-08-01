@@ -4,7 +4,7 @@
 #include "lists.h"
 
 /**
-11;rgb:0000/0000/0000* delete_nodeint_at_index - delete node at a given index
+ * delete_nodeint_at_index - delete node at a given index
  * @head: pointer at the list
  * @index: index of the node to be deleted
  *
@@ -16,7 +16,7 @@ int delete_nodeint_at_index(listint_t **head, unsigned int index)
 	listint_t *ptr;
 	listint_t *itr;
 
-	if (head == NULL)
+	if (head == NULL || *head == NULL)
 		return (-1);
 	ptr = *head;
 	if (index == 0)
