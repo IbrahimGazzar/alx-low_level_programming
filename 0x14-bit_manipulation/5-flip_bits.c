@@ -16,12 +16,10 @@ unsigned int flip_bits(unsigned long int n, unsigned long int m)
 	int bits;
 
 	bits = 0;
-	i = 1;
-	while (i < n || i < m)
-		i <<= 1;
+	i = n ^ m;
 	while (i > 0)
 	{
-		if ((m & i) != (n & i))
+		if (i & 1)
 			bits++;
 		i >>= 1;
 	}
