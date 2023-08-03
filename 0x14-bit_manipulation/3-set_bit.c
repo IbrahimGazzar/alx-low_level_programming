@@ -22,7 +22,6 @@ int set_bit(unsigned long int *n, unsigned int index)
 	}
 	if (*n & i)
 		return (-1);
-	else
-		*n += i;
+	*n += i;
 	return (1);
 }
