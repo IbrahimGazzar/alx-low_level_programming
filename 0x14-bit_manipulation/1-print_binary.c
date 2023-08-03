@@ -18,6 +18,8 @@ void print_binary(unsigned long int n)
 		i *= 2;
 	if (i > n)
 		i = i >> 1;
+	if (n == 0)
+		_putchar('0');
 	while (i > 0)
 	{
 		if ((n & i) > 0)
