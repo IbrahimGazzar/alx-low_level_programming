@@ -42,19 +42,20 @@ int main(int argc, char **argv)
 		read_bytes = read(fd1, text, 1024);
 		if (read_bytes == -1)
 		{
-			if (close(fd2) == -1)
-				error_100(fd2);
-			if (close(fd1) == -1)
-				error_100(fd1);
+			free(text);
 			error_98(argv[1]);
 		}
 		if(write(fd2, text, read_bytes) != read_bytes)
 		{
-			if (close(fd2) == -1)
-				error_100(fd2);
+			free(text);
 			error_99(fd1, argv[2]);
 		}
 	} while (read_bytes > 0);
+	free(text);
+	if (close(fd1) == -1)
+	    error_100(fd1);
+	if (close(fd2) == -1)
+		error_100(fd2);
 	return (0);
 }
 /**
