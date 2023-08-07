@@ -7,7 +7,7 @@
 #include "main.h"
 void error_98(char *s);
 void error_99(int fd, char *s);
-
+void error_100(int fd);
 /**
  * main - main function that copies file content
  * @argc: number of given arguements
@@ -37,14 +37,24 @@ int main(int argc, char **argv)
 	if (fd2 == -1)
 		error_99(fd1, argv[2]);
 	text = malloc(sizeof(char) * 1024);
-	while ((read_bytes = read(fd1, text, 1024)) > 0)
+	do
 	{
-		if (write(fd2, text, read_bytes) != read_bytes)
+		read_bytes = read(fd1, text, 1024);
+		if (read_bytes == -1)
 		{
-			close(fd2);
+			if (close(fd2) == -1)
+				error_100(fd2);
+			if (close(fd1) == -1)
+				error_100(fd1);
+			error_98(argv[1]);
+		}
+		if(write(fd2, text, read_bytes) != read_bytes)
+		{
+			if (close(fd2) == -1)
+				error_100(fd2);
 			error_99(fd1, argv[2]);
 		}
-	}
+	} while (read_bytes > 0);
 	return (0);
 }
 /**
@@ -69,6 +79,18 @@ void error_98(char *s)
 void error_99(int fd, char *s)
 {
 	printf("Error: Can't write to %s\n", s);
-	close(fd);
+	if (close(fd) == -1)
+		error_100(fd);
 	exit(99);
+}
+/**
+ * error_100 - deals with error in closing files
+ * @fd: file failed to close
+ *
+ * Return: no return value
+ */
+void error_100(int fd)
+{
+	printf("Error: Can't close fd %d\n", fd);
+	exit(100);
 }
