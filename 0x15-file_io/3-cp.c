@@ -37,8 +37,7 @@ int main(int argc, char **argv)
 	if (fd2 == -1)
 		error_99(fd1, argv[2]);
 	text = malloc(sizeof(char) * 1024);
-	do
-	{
+	do {
 		read_bytes = read(fd1, text, 1024);
 		if (read_bytes == -1)
 		{
@@ -48,7 +47,7 @@ int main(int argc, char **argv)
 				error_100(fd1);
 			error_98(argv[1]);
 		}
-		if(write(fd2, text, read_bytes) != read_bytes)
+		if (write(fd2, text, read_bytes) != read_bytes)
 		{
 			if (close(fd2) == -1)
 				error_100(fd2);
