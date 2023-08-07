@@ -5,9 +5,9 @@
 #include <errno.h>
 #include <string.h>
 #include "main.h"
-void error_98();
+void error_98(void);
 void error_99(int fd);
-void error_100();
+void error_100(void);
 /**
  * main - main function that copies file content
  * @argc: number of given arguements
@@ -62,9 +62,9 @@ int main(int argc, char **argv)
  * Return: no return value
  */
 
-void error_98()
+void error_98(void)
 {
-	perror("Error: Can't read from file ");
+	perror("Error: Can't read from file");
 	exit(98);
 }
 /**
@@ -75,9 +75,9 @@ void error_98()
  */
 void error_99(int fd)
 {
-	perror("Error: Can't write to ");
+	perror("Error: Can't write to");
 	if (close(fd) == -1)
-		error_100(fd);
+		error_100();
 	exit(99);
 }
 /**
@@ -85,8 +85,8 @@ void error_99(int fd)
  *
  * Return: no return value
  */
-void error_100()
+void error_100(void)
 {
-	perror("Error: Can't close fd ");
+	perror("Error: Can't close fd");
 	exit(100);
 }
