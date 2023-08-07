@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <stdlib.h>
+0;276;0c#include <stdlib.h>
 #include <unistd.h>
 #include <fcntl.h>
 #include <errno.h>
@@ -26,7 +26,7 @@ int create_file(const char *filename, char *text_content)
 		return (-1);
 	if (text_content != NULL)
 		bytes_write = write(fd, text_content, strlen(text_content));
-	close (fd);
+	close(fd);
 	if (bytes_write == -1)
 		return (-1);
 	return (1);
