@@ -42,11 +42,15 @@ int main(int argc, char **argv)
 		if (read_bytes == -1)
 		{
 			free(text);
+			close(fd1);
+			close(fd2);
 			error_98(argv[1]);
 		}
 		if (write(fd2, text, read_bytes) != read_bytes)
 		{
 			free(text);
+			close(fd1);
+			close(fd2);
 			error_99(fd1, argv[2]);
 		}
 	} while (read_bytes > 0);
