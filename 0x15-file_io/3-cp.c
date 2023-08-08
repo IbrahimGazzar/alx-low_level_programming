@@ -37,15 +37,14 @@ int main(int argc, char **argv)
 	if (fd2 == -1)
 		error_99(fd1, argv[2]);
 	text = malloc(sizeof(char) * 1024);
-	do
-	{
+	do {
 		read_bytes = read(fd1, text, 1024);
 		if (read_bytes == -1)
 		{
 			free(text);
 			error_98(argv[1]);
 		}
-		if(write(fd2, text, read_bytes) != read_bytes)
+		if (write(fd2, text, read_bytes) != read_bytes)
 		{
 			free(text);
 			error_99(fd1, argv[2]);
@@ -53,7 +52,7 @@ int main(int argc, char **argv)
 	} while (read_bytes > 0);
 	free(text);
 	if (close(fd1) == -1)
-	    error_100(fd1);
+		error_100(fd1);
 	if (close(fd2) == -1)
 		error_100(fd2);
 	return (0);
