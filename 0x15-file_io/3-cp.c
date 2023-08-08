@@ -82,7 +82,7 @@ void error_98(char *s)
  */
 void error_99(int fd, char *s)
 {
-	dprintf(STDERR_FILENO, "Error: Can't write to %s", s);
+	dprintf(STDERR_FILENO, "Error: Can't write to %s\n", s);
 	close(fd);
 	exit(99);
 }
@@ -94,6 +94,6 @@ void error_99(int fd, char *s)
  */
 void error_100(int fd)
 {
-	dprintf(STDERR_FILENO, "Error: Can't close fd %d", fd);
+	dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd);
 	exit(100);
 }
