@@ -17,15 +17,15 @@ def island_perimeter(grid):
         grid ([[int]]): The grid representation of our little island
     """
     perimeter = 0
-    for i in range(1, len(grid) - 1):
-        for sq in range(1, len(grid[i]) - 1):
+    for i in range(0, len(grid)):
+        for sq in range(0, len(grid[i])):
             if grid[i][sq]:
-                if not grid[i - 1][sq]:
+                if not i or not grid[i - 1][sq]:
                     perimeter += 1
-                if not grid[i][sq - 1]:
+                if not sq or not grid[i][sq - 1]:
                     perimeter += 1
-                if not grid[i + 1][sq]:
+                if i == len(grid) or not grid[i + 1][sq]:
                     perimeter += 1
-                if not grid[i][sq + 1]:
+                if sq == len(grid[i]) or not grid[i][sq + 1]:
                     perimeter += 1
     return perimeter
