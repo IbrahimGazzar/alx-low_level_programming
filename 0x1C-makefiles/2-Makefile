@@ -7,7 +7,5 @@ NAME = school
 %.o: %.c
 	$(CC) -c -Wall $<
 
-all: school
-
-school: $(OBJ)
+all: $(OBJ)
 	$(CC) $(OBJ) -o $(NAME)
