@@ -1,0 +1,21 @@
+# Compile school.c
+CC = gcc
+SRC = main.c school.c
+OBJ = $(SRC:%.c=%.o)
+NAME = school
+
+%.o: %.c
+	$(CC) -c -Wall $<
+
+all: $(OBJ)
+	$(CC) $(OBJ) -o $(NAME)
+
+clean:
+	rm -f *~ school
+
+oclean:
+	rm -f $(OBJ)
+
+fclean: clean oclean
+
+re: oclean all
