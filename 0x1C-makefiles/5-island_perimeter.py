@@ -19,13 +19,13 @@ def island_perimeter(grid):
     perimeter = 0
     for i in range(0, len(grid)):
         for sq in range(0, len(grid[i])):
-            if grid[i][sq]:
-                if not i or not grid[i - 1][sq]:
+            if grid[i][sq] == 1:
+                if i == 0 or grid[i - 1][sq] == 0:
                     perimeter += 1
-                if not sq or not grid[i][sq - 1]:
+                if sq == 0 or grid[i][sq - 1] == 0:
                     perimeter += 1
-                if i == len(grid) or not grid[i + 1][sq]:
+                if i == len(grid) - 1 or grid[i + 1][sq] == 0:
                     perimeter += 1
-                if sq == len(grid[i]) or not grid[i][sq + 1]:
+                if sq == len(grid[i]) - 1 or grid[i][sq + 1] == 0:
                     perimeter += 1
     return perimeter
