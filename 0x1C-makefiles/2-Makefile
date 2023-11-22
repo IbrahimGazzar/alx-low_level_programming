@@ -9,4 +9,4 @@ school: $(OBJ)
 	$(CC) $(OBJ) -o $(NAME)
 
 %.o: %.c
-	$(CC) -c -Wall $<
+	$(CC) -c -Wall $@ $<
